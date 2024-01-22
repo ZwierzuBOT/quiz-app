@@ -76,8 +76,8 @@ body{
 }
 
 .ans{
-  width:60%;
-  height: 15%;
+  width:40%;
+  height: 10%;
   display: flex;
   justify-content: center;
   padding-left: 5%;
@@ -85,6 +85,61 @@ body{
   background-color: var(--primary-color);
   border-radius: 2rem;
   font-size: 2rem;
+  padding: 0;
   color: var(--tertiary-color);
   cursor: pointer;
+}
+
+.num{
+  width:20%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  padding-left: 5%;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border-radius: 2rem;
+  font-size: 3rem;
+  padding: 0;
+  color: var(--primary-color);
+}
+
+.back, .next{
+  position: absolute;
+  bottom: 5%;
+  width: 10%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--quaternary-color);
+  background-color: var(--tertiary-color);
+  border-radius: 1rem;
+  border: .3rem solid var(--primary-color);
+  cursor: pointer;
+}
+
+.back{
+  left: 3%;
+}
+.next{
+  right: 3%;
+}
+
+
+.selected{
+  width:30%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  padding-left: 5%;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  font-size: 2rem;
+  padding: 0;
+  color: var(--tertiary-color);
+  cursor: pointer;
+  
 }
