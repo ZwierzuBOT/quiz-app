@@ -6,6 +6,7 @@
   --secondary-color: #ce662e;
   --tertiary-color: #7e3700;
   --quaternary-color: #ffdeb1;
+  --whiteCool-color:#efefef;
 }
 
 *{
@@ -39,6 +40,7 @@ body{
   height: 80%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   position: relative;
   background-color: var(--secondary-color);
@@ -72,9 +74,23 @@ body{
   justify-content: center;
   align-items: center;
   gap: 10%;
-
+  transition: all 0.5s ease-in-out;
+  transform: translateX(0);
 }
-
+.notList{
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  transform: translateX(200%);
+  transition: all 0.5s ease-in-out;
+}
 .ans{
   width:40%;
   height: 10%;
@@ -88,6 +104,7 @@ body{
   padding: 0;
   color: var(--tertiary-color);
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .num{
@@ -103,8 +120,28 @@ body{
   padding: 0;
   color: var(--primary-color);
 }
+.scoreInv, .scoreVis{
+  width:50%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  padding-left: 5%;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border-radius: 2rem;
+  font-size: 3rem;
+  padding: 0;
+  color: var(--primary-color);
+  
+}
 
-.back, .next{
+.scoreInv{transform: translateX(200%);}
+.scoreVis{transform: translateX(0%);}
+
+
+
+
+.next{
   position: absolute;
   bottom: 5%;
   width: 10%;
@@ -120,9 +157,6 @@ body{
   cursor: pointer;
 }
 
-.back{
-  left: 3%;
-}
 .next{
   right: 3%;
 }
@@ -130,16 +164,19 @@ body{
 
 .selected{
   width:30%;
-  height: 20%;
+  height: 10%;
   display: flex;
   justify-content: center;
   padding-left: 5%;
   align-items: center;
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
   border-radius: 2rem;
   font-size: 2rem;
   padding: 0;
-  color: var(--tertiary-color);
+  color: rgb(255, 194, 109);
   cursor: pointer;
-  
+  border: .3rem solid rgb(255, 194, 109);
+
+  transition: all 0.3s ease-in-out;
 }
+
