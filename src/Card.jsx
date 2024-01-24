@@ -2,7 +2,7 @@ import { useState } from "react";
 import { data } from "./assets/data";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 const Card = () => {
 
@@ -34,10 +34,34 @@ const Card = () => {
   let [show1, setShow1] = useState("list");
   let [show2, setShow2] = useState("scoreInv");
 
+  let[n, setN] = useState("next");
+  let [j, setJ] = useState(0);
+
+    let [ic, setIc] = useState(faArrowRight);
+
 
   const handleClick = (d) => {
     if (d === "next") {
       if (i < data.length - 1) {
+
+        console.log('sss');
+        if(j === 1){
+            console.log("ds");
+          setShow1("list");
+          setShow2("scoreInv");
+          setI(0);
+          setQuestion(data[0].question);
+          setAns(data[i].ans);
+          setOp1(data[i].option1);
+          setOp2(data[i].option2);
+          setOp3(data[i].option3);
+          setOp4(data[i].option4);
+          setJ(0);
+          setN("next");
+          setIc(faArrowRight);
+        }
+        else{
+
         setI((prevI) => prevI + 1);
   
         setQuestion(data[i + 1].question);
@@ -55,7 +79,7 @@ const Card = () => {
 
         
         setScore(select1 + select2 + select3 + select4 + select5)
-
+        }
       }
       else{
           // podliczni punktow tu zrobic
@@ -69,7 +93,9 @@ const Card = () => {
         setN2("ans");
         setN3("ans");
         setN4("ans");
-        
+        setN("restart")
+        setJ(1)
+        setIc(faRefresh)
         setShow1("notList")
         setShow2("scoreVis")
         
@@ -145,8 +171,8 @@ const Card = () => {
           {op4}
         </li>
       </ul>
-      <div className="next" onClick={() => handleClick("next")}>
-        <FontAwesomeIcon icon={faArrowRight} />
+      <div className={n} onClick={() => handleClick("next")}>
+        <FontAwesomeIcon icon={ic} />
       </div>
         <div className={show2}>You score is {score}/5</div>      
     </div>

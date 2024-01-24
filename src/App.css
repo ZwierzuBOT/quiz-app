@@ -132,10 +132,11 @@ body{
   font-size: 3rem;
   padding: 0;
   color: var(--primary-color);
+  transition: all 0.5s ease-in-out;
   
 }
 
-.scoreInv{transform: translateX(200%);}
+.scoreInv{transform: translateX(-200%);}
 .scoreVis{transform: translateX(0%);}
 
 
@@ -144,6 +145,7 @@ body{
 .next{
   position: absolute;
   bottom: 5%;
+  right: 3%;
   width: 10%;
   height: 10%;
   display: flex;
@@ -155,11 +157,28 @@ body{
   border-radius: 1rem;
   border: .3rem solid var(--primary-color);
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
-.next{
-  right: 3%;
+.restart{
+  position: absolute;
+  bottom: 5%;
+  right: auto;
+  left: auto;
+  width: 10%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--quaternary-color);
+  background-color: var(--tertiary-color);
+  border-radius: 1rem;
+  border: .3rem solid var(--primary-color);
+  cursor: pointer;
+  transition: all .5s ease-in-out;
 }
+
 
 
 .selected{
